@@ -1,6 +1,7 @@
 name: Build & Push Docker Image
 
 on:
+  workflow_dispatch: # 👈 1. 添加此项以支持在 GitHub Actions 页面手动运行
   push:
     branches: [main]
   release:
@@ -8,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: cli
+  IMAGE_NAME: test   # 👈 2. 打包名称从 cli 改为 test
 
 jobs:
   build:
